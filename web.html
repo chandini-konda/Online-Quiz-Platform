@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="quiz-container">
+    <h2>Online Test System</h2>
+    <div class="timer">
+        Time Left: <span id="timer">30</span> sec
+    </div>
+    
+    <p id="question">Loading question...</p>
+    <div class="options">
+        <button class="option" onclick="checkAnswer(0)"></button>
+        <button class="option" onclick="checkAnswer(1)"></button>
+        <button class="option" onclick="checkAnswer(2)"></button>
+        <button class="option" onclick="checkAnswer(3)"></button>
+    </div>
+    
+    <p id="result"></p>
+    <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+

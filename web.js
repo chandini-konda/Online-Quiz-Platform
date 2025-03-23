@@ -64,7 +64,7 @@ function loadQuestion() {
 }
 
 function checkAnswer(selectedIndex) {
-    clearInterval(timer); // Stop timer when user selects an answer
+    clearInterval(timer); 
     
     const currentQuestion = questions[currentQuestionIndex];
 
@@ -107,5 +107,4 @@ function nextQuestion() {
     }
 }
 
-// Load the first question
 loadQuestion();

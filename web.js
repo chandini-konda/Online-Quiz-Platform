@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "What does HTML stand for?",
+        question: "1. What does HTML stand for?",
         options: [
             "Hyper Transfer Markup Language",
             "Hyper Text Markup Language",
@@ -10,18 +10,23 @@ const questions = [
         answer: 1
     },
     {
-        question: "Which tag is used to define an image in HTML?",
+        question: "2. Which tag is used to define an image in HTML?",
         options: ["<img>", "<image>", "<pic>", "<src>"],
         answer: 0
     },
     {
-        question: "Which tag is used for the largest heading in HTML?",
+        question: "3. Which tag is used for the largest heading in HTML?",
         options: ["<h1>", "<h6>", "<head>", "<h4>"],
         answer: 0
     },
     {
-        question: "Which attribute is used to provide a unique name to an HTML element?",
+        question: "4. Which attribute is used to provide a unique name to an HTML element?",
         options: ["id", "class", "name", "style"],
+        answer: 0
+    },
+    {
+        question: "5. Which tag is used to create an ordered list?",
+        options: ["ol", "ul", "li", "order"],
         answer: 0
     }
 ];
@@ -60,6 +65,13 @@ function loadQuestion() {
     }
     
     document.getElementById("result").innerText = "";
+
+    if (currentQuestionIndex === questions.length - 1) {
+        document.getElementById("next-btn").innerText = "Submit";
+    } else {
+        document.getElementById("next-btn").innerText = "Next Question";
+    }
+
     document.getElementById("next-btn").style.display = "none";
 }
 
@@ -97,13 +109,13 @@ function autoSubmit() {
 }
 
 function nextQuestion() {
-    currentQuestionIndex++;
-    
-    if (currentQuestionIndex < questions.length) {
-        loadQuestion();
+    if (currentQuestionIndex === questions.length - 1) {
+       
+        document.querySelector(".quiz-container").innerHTML = `<h2>Test Completed</h2>
+        <p>Your score: ${score} / ${questions.length}</p>`;
     } else {
-        clearInterval(timer);
-        document.querySelector(".quiz-container").innerHTML = `<h2>Test Completed</h2><p>Your score: ${score}/${questions.length}</p>`;
+        currentQuestionIndex++;
+        loadQuestion();
     }
 }
 

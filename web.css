@@ -1,5 +1,5 @@
 body {
-    background-color: #f1a9c7;
+    background-color: #f8c8dc;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,12 +9,13 @@ body {
 }
 
 .quiz-container {
-    background-color: rgb(153, 232, 245);
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 400px;
+    width: 1000px;
+
 }
 
 .timer {
